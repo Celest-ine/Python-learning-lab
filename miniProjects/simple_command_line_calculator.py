@@ -111,7 +111,7 @@ def mathematical_operation():
             elif choice == '8':
                 print(f"{num} cubed is", cubed(num))
             elif choice == '9':
-                print(f"The square root of {num}", sqrroot(num))
+                print(f"The square root of {num} is", sqrroot(num))
         elif choice == '10':
             part = float(input("\nEnter the part number: ").strip())
             whole = float(input("\nEnter the whole number: ").strip())
