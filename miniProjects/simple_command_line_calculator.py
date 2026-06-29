@@ -27,42 +27,6 @@ def greetings():
 
 greetings()
 
-def mathematical_operation():
-    """Ask the user to enter the operation they want to perform."""
-    options = ("""What mathematical operation do you want to perform:
-                          1. Addition
-                          2. Subtraction
-                          3. Multiplication
-                          4. Division
-                          5. Modulo
-                          6. Raise a number to the power of another number
-                          7. Square a number
-                          8. Cube a number
-                          9. Find the squareroot of a number
-                          10. Find the percentage of a number
-                          11.Exit
-                          """)
-    print(options)
-    
-    while True:
-        # Take user input
-        choice = input("\nEnter your choice here: ")
-        if choice == '11':
-            print("\t*****Exiting Session***** ")
-        if choice in ('1', '2', '3', '4', '5', '6'):
-            num1 = input("\nEnter the first number: ")
-            num2 = input("\nEnter the second number: ")
-        elif choice in ('7', '8', '9'):
-            num = input("\nEnter the number: ")
-        elif choice == '10':
-            part = input("\nEnter the part number: ")
-            whole = input("\nEnter the whole number: ")
-        else:
-            print("Invalid input.Please enter the number of the operation you want to perform.")
-            print(options)
-            continue
-
-
 # Operations carried out by the calculator
 
 def multiplication(num1, num2):
@@ -95,3 +59,57 @@ def sqrroot(num1):
 def percentage(part, whole):
     """Return the percentageof a number. """
     return (part / whole) * 100
+
+def mathematical_operation():
+    """Ask the user to enter the operation they want to perform."""
+    options = ("""What mathematical operation do you want to perform:
+                          1. Addition
+                          2. Subtraction
+                          3. Multiplication
+                          4. Division
+                          5. Modulo
+                          6. Raise a number to the power of another number
+                          7. Square a number
+                          8. Cube a number
+                          9. Find the squareroot of a number
+                          10. Find the percentage of a number
+                          11.Exit
+                          """)
+    print(options)
+    
+    while True:
+        # Take user input
+        choice = input("\nEnter your choice here: ")
+        if choice == '11':
+            print("\t*****Exiting Session***** ")
+        if choice in ('1', '2', '3', '4', '5', '6'):
+            num1 = input("\nEnter the first number: ")
+            num2 = input("\nEnter the second number: ")
+            if choice == '1':
+                print(num1, '+', num2, '=', addition(num1, num2))
+            elif choice == '2':
+                print(num1, '-', num2, '=', subtraction(num1, num2))
+            elif choice == '3':
+                print(num1, '*', num2, '=', multiplication(num1, num2))
+            elif choice == '4':
+                print(num1, '/', num2, '=', division(num1, num2))
+            elif choice == '5':
+                print(num1, '%', num2, '=', modulo(num1, num2))
+            elif choice == '6':
+                print(num1, '**', num2, '=', power(num1, num2))
+        elif choice in ('7', '8', '9'):
+            num = input("\nEnter the number: ")
+            if choice == '7':
+                print(f"{num} squared is", squared(num))
+            elif choice == '8':
+                print(f"{num} cubed is", cubed(num))
+            elif choice == '9':
+                print(f"The square root of {num}", sqrroot(num))
+        elif choice == '10':
+            part = input("\nEnter the part number: ")
+            whole = input("\nEnter the whole number: ")
+            print(part, '*', whole, '/', '100 =', percentage(part, whole))
+        else:
+            print("Invalid input.Please enter the number of the operation you want to perform.")
+            print(options)
+            continue
