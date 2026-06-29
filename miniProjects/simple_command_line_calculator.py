@@ -113,3 +113,5 @@ def mathematical_operation():
             print("Invalid input.Please enter the number of the operation you want to perform.")
             print(options)
             continue
+
+mathematical_operation()
