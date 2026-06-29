@@ -25,4 +25,73 @@ def greetings():
           ***** WELCOME TO {calculator_version} *****
           """)
 
-greetings() 
+greetings()
+
+def mathematical_operation():
+    """Ask the user to enter the operation they want to perform."""
+    options = ("""What mathematical operation do you want to perform:
+                          1. Addition
+                          2. Subtraction
+                          3. Multiplication
+                          4. Division
+                          5. Modulo
+                          6. Raise a number to the power of another number
+                          7. Square a number
+                          8. Cube a number
+                          9. Find the squareroot of a number
+                          10. Find the percentage of a number
+                          11.Exit
+                          """)
+    print(options)
+    
+    while True:
+        # Take user input
+        choice = input("\nEnter your choice here: ")
+        if choice == '11':
+            print("\t*****Exiting Session***** ")
+        if choice in ('1', '2', '3', '4', '5', '6'):
+            num1 = input("\nEnter the first number: ")
+            num2 = input("\nEnter the second number: ")
+        elif choice in ('7', '8', '9'):
+            num = input("\nEnter the number: ")
+        elif choice == '10':
+            part = input("\nEnter the part number: ")
+            whole = input("\nEnter the whole number: ")
+        else:
+            print("Invalid input.Please enter the number of the operation you want to perform.")
+            print(options)
+            continue
+
+
+# Operations carried out by the calculator
+
+def multiplication(num1, num2):
+    """Multiply two numbers."""
+    return num1 * num2
+def addition(num1, num2):
+    """Add two numbers."""
+    return num1 + num2
+def subtraction(num1, num2):
+    """Subtract the second number from the first number."""
+    return num1 - num2
+def division(num1, num2):
+    """Divide the first number by the second number."""
+    return num1 / num2
+def modulo(num1, num2):
+    """Find the remaider of the division of the first number and the second number."""
+    return num1 %  num2
+def power(num1,num2 ):
+    """Raise the first number to the power of the second number."""
+    return num1 ** num2
+def squared(num1):
+    """Return the result of a number multiplied by itself."""
+    return num1 ** 2
+def cubed(num1):
+    """Return the result of a number cubed."""
+    return num1 ** 3
+def sqrroot(num1):
+    """"Return the square root of a number."""
+    return num1 ** 0.5
+def percentage(part, whole):
+    """Return the percentageof a number. """
+    return (part / whole) * 100
