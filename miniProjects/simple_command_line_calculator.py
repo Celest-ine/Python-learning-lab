@@ -82,11 +82,15 @@ def mathematical_operation():
             print("\t\n*****Exiting Session***** ")
             break
         if choice in ('1', '2', '3', '4', '5', '6'):
-            num1 = float(input("\nEnter the first number: ").strip())
-            num2 = float(input("\nEnter the second number: ").strip())
+            num1 = input("\nEnter the first number: ").strip()
+            num2 = input("\nEnter the second number: ").strip()
+
             if num1 == "" or num2 == "":
                 print("Can't do operations with out numbers.Please enter valid numbers.")
                 continue
+
+            num1 = float(num1)
+            num2 = float(num2)
             if choice == '1':
                 print(num1, '+', num2, '=', addition(num1, num2))
             elif choice == '2':
@@ -100,10 +104,13 @@ def mathematical_operation():
             elif choice == '6':
                 print(num1, '**', num2, '=', power(num1, num2))
         elif choice in ('7', '8', '9'):
-            num = float(input("\nEnter the number: ").strip())
+            num = input("\nEnter the number: ").strip()
+
             if num == "":
                 print("Can't operate without a number. Try again.")
                 continue
+
+            num = float(num)
             if choice == '7':
                 print(f"{num} squared is", squared(num))
             elif choice == '8':
@@ -111,11 +118,14 @@ def mathematical_operation():
             elif choice == '9':
                 print(f"The square root of {num} is", sqrroot(num))
         elif choice == '10':
-            part = float(input("\nEnter the part number: ").strip())
-            whole = float(input("\nEnter the whole number: ").strip())
+            part = input("\nEnter the part number: ").strip()
+            whole = input("\nEnter the whole number: ").strip()
+
             if part or whole == "":
                 print("Can't perform the operation without the numbers.Please enter a valid number.")
                 continue
+            part = float(part)
+            whole = float(whole)
             print(part, '*', whole, '/', '100 =', percentage(part, whole))
         else:
             print("Invalid input.Please enter the number of the operation you want to perform.")
