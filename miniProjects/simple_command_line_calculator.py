@@ -88,6 +88,12 @@ def mathematical_operation():
             if num1 == "" or num2 == "":
                 print("Can't do operations with out numbers.Please enter valid numbers.")
                 continue
+            if num1.isalpha():
+                print("Cannot perform math operations with letters.Enter a number.")
+                continue
+            if num2.isalpha():
+                print("Cannot perform math operations with letters.Enter a valid number.")
+                continue
 
             num1 = float(num1)
             num2 = float(num2)
@@ -115,6 +121,9 @@ def mathematical_operation():
             if num == "":
                 print("Can't operate without a number. Try again.")
                 continue
+            if num.isalpha():
+                print("Cannot perform math operations with letters.Enter a valid number.")
+                continue
 
             num = float(num)
             if choice == '7':
@@ -133,6 +142,12 @@ def mathematical_operation():
             if whole == "":
                 print("Can't perform the operation withouth the number.Please enter a valid number.")
                 continue
+            if part.isalpha():
+                print("Cannot perform math operations with letters.Enter a valid number.")
+                continue
+            if whole.isalpha():
+                print("Cannot perform math operations with letters.Enter a valid number.")
+                continue
 
             part = float(part)
             whole = float(whole)
@@ -141,7 +156,7 @@ def mathematical_operation():
                 continue
             print(part, '/', whole, '*', '100 =', percentage(part, whole))
         else:
-            print("Invalid input.Please enter the number of the operation you want to perform.")
+            print("\n1Invalid input.Please enter the number of the operation you want to perform.")
             print(options)
             continue
 
