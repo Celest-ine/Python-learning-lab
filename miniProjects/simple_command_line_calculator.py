@@ -121,12 +121,16 @@ def mathematical_operation():
             part = input("\nEnter the part number: ").strip()
             whole = input("\nEnter the whole number: ").strip()
 
-            if part or whole == "":
-                print("Can't perform the operation without the numbers.Please enter a valid number.")
+            if part == "":
+                print("Can't perform the operation without the number.Please enter a valid number.")
                 continue
+            if whole == "":
+                print("Can't perform the operation withouth the number.Please enter a valid number.")
+                continue
+
             part = float(part)
             whole = float(whole)
-            print(part, '*', whole, '/', '100 =', percentage(part, whole))
+            print(part, '/', whole, '*', '100 =', percentage(part, whole))
         else:
             print("Invalid input.Please enter the number of the operation you want to perform.")
             print(options)
