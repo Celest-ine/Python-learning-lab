@@ -1,5 +1,3 @@
-import math
-
 def greetings():
     """Print a greeting message welcoming the user."""
 
