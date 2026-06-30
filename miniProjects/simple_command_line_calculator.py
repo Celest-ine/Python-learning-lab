@@ -98,8 +98,14 @@ def mathematical_operation():
             elif choice == '3':
                 print(num1, '*', num2, '=', multiplication(num1, num2))
             elif choice == '4':
+                if num2 == 0.0:
+                    print("Can't divide by zero.")
+                    continue
                 print(num1, '/', num2, '=', division(num1, num2))
             elif choice == '5':
+                if num2 == 0.0:
+                    print("Can't divide by zero.")
+                    continue
                 print(num1, '%', num2, '=', modulo(num1, num2))
             elif choice == '6':
                 print(num1, '**', num2, '=', power(num1, num2))
@@ -130,6 +136,9 @@ def mathematical_operation():
 
             part = float(part)
             whole = float(whole)
+            if whole == 0.0:
+                print("Can't divide by zero.")
+                continue
             print(part, '/', whole, '*', '100 =', percentage(part, whole))
         else:
             print("Invalid input.Please enter the number of the operation you want to perform.")
