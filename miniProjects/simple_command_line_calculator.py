@@ -78,6 +78,7 @@ def get_number(prompt):
         print("Cannot perform math operations with letters.Enter a number.")
 
     number = float(number)
+    return number
 
 
 def mathematical_operation():
