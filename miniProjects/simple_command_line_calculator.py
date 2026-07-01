@@ -69,16 +69,20 @@ def percentage(part, whole):
 
 
 def get_number(prompt):
-    number = input(f"{prompt}")
-    
-    if number == "":
-        print("Can't do operations with out numbers.Please enter valid numbers.")
-    
-    if any (char.isalpha() for char in number):
-        print("Cannot perform math operations with letters.Enter a number.")
+    """Get a number from the user and validate it."""
+    while True:
+        number = input(f"{prompt}")
 
-    number = float(number)
-    return number
+        if number == "":
+            print("Can't do operations with out numbers.Please enter valid numbers.")
+            continue
+    
+        if any (char.isalpha() for char in number):
+            print("Cannot perform math operations with letters.Enter a number.")
+            continue
+
+        number = float(number)
+        return number
 
 
 def mathematical_operation():
