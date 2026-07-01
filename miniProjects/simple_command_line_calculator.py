@@ -30,33 +30,55 @@ greetings()
 def multiplication(num1, num2):
     """Multiply two numbers."""
     return num1 * num2
+
 def addition(num1, num2):
     """Add two numbers."""
     return num1 + num2
+
 def subtraction(num1, num2):
     """Subtract the second number from the first number."""
     return num1 - num2
+
 def division(num1, num2):
     """Divide the first number by the second number."""
     return num1 / num2
+
 def modulo(num1, num2):
     """Find the remaider of the division of the first number and the second number."""
     return num1 %  num2
+
 def power(num1,num2 ):
     """Raise the first number to the power of the second number."""
     return num1 ** num2
+
 def squared(num1):
     """Return the result of a number multiplied by itself."""
     return num1 ** 2
+
 def cubed(num1):
     """Return the result of a number cubed."""
     return num1 ** 3
+
 def sqrroot(num1):
     """"Return the square root of a number."""
     return num1 ** 0.5
+
 def percentage(part, whole):
     """Return the percentageof a number. """
     return (part / whole) * 100
+
+
+def get_number(prompt):
+    number = input(f"{prompt}")
+    
+    if number == "":
+        print("Can't do operations with out numbers.Please enter valid numbers.")
+    
+    if any (char.isalpha() for char in number):
+        print("Cannot perform math operations with letters.Enter a number.")
+
+    number = float(number)
+
 
 def mathematical_operation():
     """Ask the user to enter the operation they want to perform."""
@@ -81,22 +103,11 @@ def mathematical_operation():
         if choice == '11':
             print("\t\n*****Exiting Session***** ")
             break
+
         if choice in ('1', '2', '3', '4', '5', '6'):
-            num1 = input("\nEnter the first number: ").strip()
-            num2 = input("\nEnter the second number: ").strip()
+            num1 = get_number("\nEnter the first number: ")
+            num2 = get_number("\nEnter the second number: ")
 
-            if num1 == "" or num2 == "":
-                print("Can't do operations with out numbers.Please enter valid numbers.")
-                continue
-            if num1.isalpha():
-                print("Cannot perform math operations with letters.Enter a number.")
-                continue
-            if num2.isalpha():
-                print("Cannot perform math operations with letters.Enter a valid number.")
-                continue
-
-            num1 = float(num1)
-            num2 = float(num2)
             if choice == '1':
                 print(num1, '+', num2, '=', addition(num1, num2))
             elif choice == '2':
@@ -115,6 +126,7 @@ def mathematical_operation():
                 print(num1, '%', num2, '=', modulo(num1, num2))
             elif choice == '6':
                 print(num1, '**', num2, '=', power(num1, num2))
+        
         elif choice in ('7', '8', '9'):
             num = input("\nEnter the number: ").strip()
 
